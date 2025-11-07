@@ -2,4 +2,5 @@ import 'package:flutter/animation.dart';
 
 class AppColors{
   static const Color primary = Color(0xff08431D);
+  static const Color white = Color(0xFFFFFFFF);
 }

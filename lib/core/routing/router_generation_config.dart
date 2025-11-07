@@ -12,7 +12,7 @@ class RouterGenerationConfig {
         path: AppRoutes.splashPage,
         builder: (_, _) => const SplashPage(),
       ),
-      GoRoute(path: AppRoutes.loginPage, builder: (_, _) => const LoginPage()),
+      GoRoute(path: AppRoutes.loginPage, builder: (_, _) =>  LoginPage()),
       GoRoute(path: AppRoutes.signUpPage, builder: (_, _) => const SignUpPage()),
     ],
   );

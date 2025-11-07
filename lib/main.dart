@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hungry/core/routing/router_generation_config.dart';
-
-import 'features/splash/view/splashPage.dart';
-
 void main() {
   runApp(const MyApp());
 }
