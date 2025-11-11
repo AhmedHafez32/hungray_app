@@ -7,7 +7,7 @@ class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
     super.key,
     required this.hintText,
-    required this.suffixIcon,
+   this.suffixIcon,
     required this.controller,
     required this.isPassword,
     this.validator,
@@ -15,7 +15,7 @@ class CustomTextFormField extends StatefulWidget {
   });
   final TextEditingController controller;
   final String hintText;
-  final Widget suffixIcon;
+  final Widget? suffixIcon;
   final bool isPassword;
   final String? Function(String?)? validator;
   final TextInputType? inputKeyboardType;
@@ -39,12 +39,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       controller: widget.controller,
       cursorColor: AppColors.primary,
       cursorWidth: 1,
+      cursorErrorColor: Colors.red,
       cursorHeight: 17,
       validator: widget.validator,
       obscureText: widget.isPassword ? _obscureText : false,
       keyboardType: widget.inputKeyboardType,
       cursorOpacityAnimates: true,
       decoration: InputDecoration(
+        errorStyle: AppStyles.white16W500.copyWith(color: Colors.white, fontSize: 10),
         hintText: widget.hintText,
         hintStyle: AppStyles.white16W500.copyWith(color: AppColors.primary),
         suffixIcon:
@@ -74,11 +76,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Colors.red, width: 1),
+          borderSide: const BorderSide(color: AppColors.white, width: 1),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Colors.red, width: 1),
+          borderSide: const BorderSide(color: AppColors.white, width: 1),
         ),
       ),
     );
