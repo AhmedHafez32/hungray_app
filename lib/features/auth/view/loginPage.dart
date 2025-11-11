@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hungry/core/constants/appAssets.dart';
 import 'package:hungry/core/constants/appColors.dart';
+import 'package:hungry/core/routing/app_routes.dart';
+import 'package:hungry/core/sheared/customButtonWidget.dart';
 import 'package:hungry/core/sheared/customTextFormField.dart';
 import 'package:hungry/core/sheared/spacing_widgets.dart';
 import 'package:hungry/core/styles/appStyles.dart';
@@ -78,6 +81,16 @@ class _LoginPageState extends State<LoginPage> {
                       return 'Password must be at least 8 characters';
                     }
                     return null;
+                  },
+                ),
+                const HeightSpace(height: 15),
+                CustomButtonWidget(
+                  buttonText: 'Login',
+                  onPress: () {
+                    if (formKey.currentState!.validate()) {
+                      // Handle login logic
+                      GoRouter.of(context).push(AppRoutes.signUpPage);
+                    }
                   },
                 ),
               ],
