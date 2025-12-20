@@ -11,23 +11,26 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.primary,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(AppAssets.appLogo),
-              const HeightSpace(height: 15),
-              Text(
-                'Welcome Back, Discover the fast food',
-                style: AppStyles.white16W500,
-              ),
-              const HeightSpace(height: 40),
-              LoginForm(),
-            ],
+    return InkWell(
+      onTap: ()=> FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        backgroundColor: AppColors.primary,
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(AppAssets.appLogo),
+                const HeightSpace(height: 15),
+                Text(
+                  'Welcome Back, Discover the fast food',
+                  style: AppStyles.white16W500,
+                ),
+                const HeightSpace(height: 40),
+                LoginForm(),
+              ],
+            ),
           ),
         ),
       ),
